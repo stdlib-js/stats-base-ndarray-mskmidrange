@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,20 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { typedndarray } from '@stdlib/types/ndarray';
 
 /**
-* Compute the mid-range of a one-dimensional ndarray according to a mask.
+* Calculates the mid-range of a one-dimensional ndarray according to a mask.
 *
-* @module @stdlib/stats-base-ndarray-mskmidrange
+* @param arrays - array-like object containing an input ndarray and a mask ndarray
+* @returns mid-range
 *
 * @example
 * var ndarray = require( '@stdlib/ndarray-base-ctor' );
-* var mskmidrange = require( '@stdlib/stats-base-ndarray-mskmidrange' );
 *
 * var xbuf = [ 1.0, -2.0, 4.0, 2.0 ];
 * var x = new ndarray( 'generic', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
@@ -36,12 +40,9 @@
 * var v = mskmidrange( [ x, mask ] );
 * // returns 0.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function mskmidrange<T extends typedndarray<number> = typedndarray<number>>( arrays: [ T, T ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = mskmidrange;
